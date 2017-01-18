@@ -32,7 +32,7 @@ public class BooleanTalker extends AbstractNodeMain{
     }
     @Override
     public GraphName getDefaultNodeName() {
-        return GraphName.of("rosjava_tutorial_pubsub/talker2"); //note cannot conflict
+        return GraphName.of("rosandroid/" + this.topicName); //note cannot conflict
     }
 
     @Override
@@ -42,7 +42,7 @@ public class BooleanTalker extends AbstractNodeMain{
         // This CancellableLoop will be canceled automatically when the node shuts
         // down.
         connectedNode.executeCancellableLoop(new CancellableLoop() {
-            private int sequenceNumber;
+            private int sequenceDiNumber;
 
             @Override
             protected void setup() {

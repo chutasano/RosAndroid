@@ -4,24 +4,450 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:layout_width="match_parent">
+
+        <Button
+            android:text="Dirtdog"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/buttonRobot1Select"
+            android:onClick="handleRobotSelection"
+            android:layout_margin="3dp"
+            android:layout_weight="1" />
+        <Button
+            android:text="Bender"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/buttonRobot2Select"
+            android:onClick="handleRobotSelection"
+            android:layout_weight="1"
+            android:layout_margin="3dp" />
+        <Button
+            android:text="500"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/buttonRobot3Select"
+            android:onClick="handleRobotSelection"
+            android:layout_weight="1"
+            android:layout_margin="3dp" />
+        <Button
+            android:text="Deado"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/buttonRobot4Select"
+            android:onClick="handleRobotSelection"
+            android:layout_weight="1"
+            android:layout_margin="3dp" />
+        <Button
+            android:text="Discovery"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/buttonRobot5Select"
+            android:onClick="handleRobotSelection"
+            android:layout_weight="1"
+            android:layout_margin="3dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".4">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".33"
+            android:layout_margin="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/selector_fieldset_background"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textViewRobot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00000000"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Robot"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+                    <Button
+                        android:text="Looking at"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/buttonRobot1"
+                        android:onClick="handleSendButton"
+                        android:layout_weight=".5" />
+
+                    <Button
+                        android:text="Touched"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/buttonRobot2"
+                        android:onClick="handleSendButton"
+                        android:layout_weight=".5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+                    <Button
+                        android:text="Picked up"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
+                        android:onClick="handleSendButton"
+                        android:id="@+id/buttonRobot3"/>
+
+                    <Button
+                        android:text="On charger"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
+                        android:onClick="handleSendButton"
+                        android:id="@+id/buttonRobot4" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight=".33">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/selector_fieldset_background"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textViewDirtbin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00000000"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Dirtbin"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+                    <Button
+                        android:text="Removed"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
+                        android:onClick="handleSendButton"
+                        android:id="@+id/buttonDirtbin1"/>
+
+                    <Button
+                        android:text="Emptied"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
+                        android:onClick="handleSendButton"
+                        android:id="@+id/buttonDirtbin2" />
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:orientation="horizontal">
+
+                    <Button
+                        android:text="Replaced"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:id="@+id/buttonDirtbin3"
+                        android:onClick="handleSendButton"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".34"
+            android:layout_margin="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/selector_fieldset_background"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textViewGamezone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00000000"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Gamezone"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:text="Entered"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
+                        android:onClick="handleSendButton"
+                        android:id="@+id/buttonGamezone1"/>
+                    <Button
+                        android:text="Exited"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
+                        android:onClick="handleSendButton"
+                        android:id="@+id/buttonGamezone2" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".4">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".66"
+            android:layout_margin="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/selector_fieldset_background"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textViewButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00000000"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Button"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+                    <Button
+                        android:text="Power"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/buttonButton1"
+                        android:onClick="handleSendButton"
+                        android:layout_weight=".25" />
+
+                    <Button
+                        android:text="Spot"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/buttonButton2"
+                        android:onClick="handleSendButton"
+                        android:layout_weight=".25" />
+                    <Button
+                        android:text="Clean"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/buttonButton3"
+                        android:onClick="handleSendButton"
+                        android:layout_weight=".25" />
+                    <Button
+                        android:text="Max"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/buttonButton4"
+                        android:onClick="handleSendButton"
+                        android:layout_weight=".25" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+                    <Button
+                        android:text="Dock"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".33"
+                        android:onClick="handleSendButton"
+                        android:id="@+id/buttonButton5"/>
+                    <Button
+                        android:text="Menu"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".33"
+                        android:onClick="handleSendButton"
+                        android:id="@+id/buttonButton6" />
+                    <Button
+                        android:text="Other"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".34"
+                        android:onClick="handleSendButton"
+                        android:id="@+id/buttonButton7" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight=".34">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/selector_fieldset_background"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textViewReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00000000"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Report"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+                    <Button
+                        android:text="Phonelink"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
+                        android:onClick="handleSendButton"
+                        android:id="@+id/buttonReport1"/>
+
+                    <Button
+                        android:text="Game"
+                        android:layout_margin="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
+                        android:onClick="handleSendButton"
+                        android:id="@+id/buttonReport2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:text="Robot"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:id="@+id/buttonReport3"
+                        android:onClick="handleSendButton"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
     <org.ros.android.view.RosTextView
         android:id="@+id/text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dip" />
-
-    <Button
-        android:text="Publish True"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:onClick="addQueue" />
-
-    <Button
-        android:text="Publishe False"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:onClick="addQueue" />
+        android:textSize="30dip"
+        android:visibility="invisible"/>
 
 </LinearLayout>
