@@ -14,7 +14,6 @@ import org.ros.node.NodeMainExecutor;
 //import org.ros.rosjava_tutorial_pubsub.Talker;
 import java.util.ArrayList;
 
-import chuta.rosandroid.Talker;
 
 
 public class MainActivity extends RosActivity {
@@ -49,9 +48,9 @@ public class MainActivity extends RosActivity {
         super.onCreate(savedInstanceState);
         talkerCollection = new ArrayList<>();
         //list will contain a list of all commands for each robot
-        for (int i=0; i<robotNames.length; i++)
+        for (String name : robotNames)
         {
-            talkerCollection.add(generateAllPublishers(robotNames[i]));
+            talkerCollection.add(generateAllPublishers(name));
         }
         setContentView(R.layout.activity_main);
         rosTextView = (RosTextView<std_msgs.String>) findViewById(R.id.text);
@@ -67,8 +66,8 @@ public class MainActivity extends RosActivity {
 
     private ArrayList<BooleanTalker> generateAllPublishers(String robotName) {
         ArrayList<BooleanTalker> btalkers = new ArrayList<>();
-        for (int i = 0; i < commands.length; i++) {
-            btalkers.add(new BooleanTalker(robotName + "/" + commands[i]));
+        for (String command : commands) {
+            btalkers.add(new BooleanTalker(robotName + "/" + command));
         }
         return btalkers;
     }
@@ -90,18 +89,17 @@ public class MainActivity extends RosActivity {
         nodeMainExecutor.execute(rosTextView, nodeConfiguration);
         nodeMainExecutor.execute(talker2, nodeConfiguration);
 
-
-    }
-
-    public void addQueue(View view)
-    {
-        if (view == findViewById(R.id.buttonButton1)) {
-            talker2.enqueue(true);
-        } else
+        for (ArrayList<BooleanTalker> talkers : talkerCollection)
         {
-            talker2.enqueue(false);
+            for (BooleanTalker ts : talkers)
+            {
+                nodeMainExecutor.execute(ts, nodeConfiguration);
+            }
         }
+
+
     }
+
 
     public void handleSendButton(View view)
     {
@@ -144,7 +142,7 @@ public class MainActivity extends RosActivity {
         } else if (view == findViewById(R.id.buttonReport3)) {
             talkerCollection.get(selectedRobot).get(18).enqueue(true);
         } else {
-            Log.d(TAG, "Unknown bututon");
+            Log.d(TAG, "Unknown button");
         }
     }
 
