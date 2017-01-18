@@ -15,7 +15,6 @@ import org.ros.node.NodeMainExecutor;
 import java.util.ArrayList;
 
 
-
 public class MainActivity extends RosActivity {
 
     private RosTextView<std_msgs.String> rosTextView;
@@ -24,7 +23,7 @@ public class MainActivity extends RosActivity {
 
     private ArrayList<ArrayList<BooleanTalker> > talkerCollection;
     private final String TAG = "RosTester";
-    private final String[] robotNames = {"Dirtdog", "Bender", "500", "Deado", "Discovery"};
+    private final String[] robotNames = {"Dirtdog", "Bender", "Fiveoo", "Deado", "Discovery"}; //graphname cannot have numbers?
 
     private final String[] commands =
             {"Robot/Looking", "Robot/Touched", "Robot/Pickedup", "Robot/OnCharger", //0-3
@@ -53,15 +52,15 @@ public class MainActivity extends RosActivity {
             talkerCollection.add(generateAllPublishers(name));
         }
         setContentView(R.layout.activity_main);
-        rosTextView = (RosTextView<std_msgs.String>) findViewById(R.id.text);
-        rosTextView.setTopicName("chatter");
-        rosTextView.setMessageType(std_msgs.String._TYPE);
-        rosTextView.setMessageToStringCallable(new MessageCallable<String, std_msgs.String>() {
-            @Override
-            public String call(std_msgs.String message) {
-                return message.getData();
-            }
-        });
+        //rosTextView = (RosTextView<std_msgs.String>) findViewById(R.id.text);
+        //rosTextView.setTopicName("chatter");
+        //rosTextView.setMessageType(std_msgs.String._TYPE);
+        //rosTextView.setMessageToStringCallable(new MessageCallable<String, std_msgs.String>() {
+//            @Override
+//            public String call(std_msgs.String message) {
+//                return message.getData();
+//            }
+//        });
     }
 
     private ArrayList<BooleanTalker> generateAllPublishers(String robotName) {
@@ -74,8 +73,8 @@ public class MainActivity extends RosActivity {
 
     @Override
     protected void init(NodeMainExecutor nodeMainExecutor) {
-        talker = new Talker();
-        talker2 = new BooleanTalker("hipub");
+        //talker = new Talker();
+        //talker2 = new BooleanTalker("hipub");
         // At this point, the user has already been prompted to either enter the URI
         // of a master to use or to start a master locally.
 
@@ -83,11 +82,11 @@ public class MainActivity extends RosActivity {
         // activity.
         NodeConfiguration nodeConfiguration = NodeConfiguration.newPublic(getRosHostname());
         nodeConfiguration.setMasterUri(getMasterUri());
-        nodeMainExecutor.execute(talker, nodeConfiguration);
+        //nodeMainExecutor.execute(talker, nodeConfiguration);
         // The RosTextView is also a NodeMain that must be executed in order to
         // start displaying incoming messages.
-        nodeMainExecutor.execute(rosTextView, nodeConfiguration);
-        nodeMainExecutor.execute(talker2, nodeConfiguration);
+        //nodeMainExecutor.execute(rosTextView, nodeConfiguration);
+        //nodeMainExecutor.execute(talker2, nodeConfiguration);
 
         for (ArrayList<BooleanTalker> talkers : talkerCollection)
         {
@@ -162,29 +161,29 @@ public class MainActivity extends RosActivity {
         b4.setBackgroundColor(Color.WHITE);
         b5.setBackgroundColor(Color.WHITE);
 
-        if (view == findViewById(R.id.buttonRobot1Select))
+        if (view == b1)
         {
-            ((Button)view).setBackgroundColor(Color.RED);
+            view.setBackgroundColor(Color.RED);
             selectedRobot = 0;
         }
-        else if (view == findViewById(R.id.buttonRobot2Select))
+        else if (view == b2)
         {
-            ((Button)view).setBackgroundColor(Color.RED);
+            view.setBackgroundColor(Color.RED);
             selectedRobot = 1;
         }
-        else if (view == findViewById(R.id.buttonRobot3Select))
+        else if (view == b3)
         {
-            ((Button)view).setBackgroundColor(Color.RED);
+            view.setBackgroundColor(Color.RED);
             selectedRobot = 2;
         }
-        else if (view == findViewById(R.id.buttonRobot4Select))
+        else if (view == b4)
         {
-            ((Button)view).setBackgroundColor(Color.RED);
+            view.setBackgroundColor(Color.RED);
             selectedRobot = 3;
         }
-        else if (view == findViewById(R.id.buttonRobot5Select))
+        else if (view == b5)
         {
-            ((Button)view).setBackgroundColor(Color.RED);
+            view.setBackgroundColor(Color.RED);
             selectedRobot = 4;
         }
     }
