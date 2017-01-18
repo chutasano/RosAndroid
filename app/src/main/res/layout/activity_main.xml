@@ -62,6 +62,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".33"
+            android:background="@color/colorPurple"
             android:layout_margin="5dp">
 
             <LinearLayout
@@ -70,7 +71,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="13dp"
-                android:background="@drawable/selector_fieldset_background"
+                android:background="@color/colorPurple"
                 android:orientation="vertical" >
 
                 <TextView
@@ -141,6 +142,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
+            android:background="@color/colorBlue"
             android:layout_weight=".33">
 
             <LinearLayout
@@ -149,7 +151,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="13dp"
-                android:background="@drawable/selector_fieldset_background"
+                android:background="@color/colorBlue"
                 android:orientation="vertical" >
 
                 <TextView
@@ -210,6 +212,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".34"
+            android:background="@color/colorGreen"
             android:layout_margin="5dp">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -217,7 +220,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="13dp"
-                android:background="@drawable/selector_fieldset_background"
+                android:background="@color/colorGreen"
                 android:orientation="vertical" >
 
                 <TextView
@@ -270,6 +273,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".66"
+            android:background="@color/colorIdk"
             android:layout_margin="5dp">
 
             <LinearLayout
@@ -278,7 +282,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="13dp"
-                android:background="@drawable/selector_fieldset_background"
+                android:background="@color/colorIdk"
                 android:orientation="vertical" >
 
                 <TextView
@@ -372,6 +376,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
+            android:background="@color/colorRed"
             android:layout_weight=".34">
 
             <LinearLayout
@@ -380,7 +385,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="13dp"
-                android:background="@drawable/selector_fieldset_background"
+                android:background="@color/colorRed"
                 android:orientation="vertical" >
 
                 <TextView

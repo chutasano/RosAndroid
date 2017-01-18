@@ -23,8 +23,8 @@ public class MainActivity extends RosActivity {
 
     private ArrayList<ArrayList<BooleanTalker> > talkerCollection;
     private final String TAG = "RosTester";
-    private final String[] robotNames = {"Dirtdog", "Bender", "Fiveoo", "Deado", "Discovery"}; //graphname cannot have numbers?
-
+    //private final String[] robotNames = {"Dirtdog", "Bender", "Fiveoo", "Deado", "Discovery"}; //graphname cannot have numbers?
+    private final String[] robotNames = {"Dirtdog"};
     private final String[] commands =
             {"Robot/Looking", "Robot/Touched", "Robot/Pickedup", "Robot/OnCharger", //0-3
              "Dirtbin/Removed", "Dirtbin/Emptied", "Dirtbin/Replaced", //4-6
